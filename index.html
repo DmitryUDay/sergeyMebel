@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уют для вашего дома</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="navibar">
+        <img src="data/logotype.png" alt="logo" class="logo">
+        
+        <div class="navigationButton">
+            <a href="index.html">Главная</a>
+            <a href="#work">Работы</a>
+            <a href="#about">О нас</a>
+            <a href="#contact">Контакты</a>
+        </div>
+        
+        <!-- Бургер-кнопка -->
+        <div class="burger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <button class="zapiska" onclick="openModal()">Связаться</button>
+        
+    </div>
+
+    <!-- Мобильное меню (выезжает справа) -->
+    <div class="mobileMenu" id="mobileMenu">
+        <div class="closeBtn" onclick="toggleMenu()">✕</div>
+        <a href="index.html" onclick="toggleMenu()">Главная</a>
+        <a href="#work" onclick="toggleMenu()">Работы</a>
+        <a href="#about" onclick="toggleMenu()">О нас</a>
+        <a href="#contact" onclick="toggleMenu()">Контакты</a>
+        <button class="zapiskaMobile" onclick="openModal(); toggleMenu();">Связаться</button>
+    </div>
+
+    <div class="brbrPatapim"></div>
+
+    <div class="bannerContainer">
+        <img src="data/banner.webp" alt="" class="banner">
+        <button class="getContact" onclick="openModal()">Получить бесплатный расчет</button>
+        <div class="plashKakaOnBaner">
+            <div class="blackPlashka">
+                <h2>Наши</h2>
+                <h2 class="orangeText">работы</h2>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="myProjects" id="work">
+        <div class="lenta">
+            <div class="cardochka">
+                <h2>Детские</h2>
+                <br>
+                <div class="card">
+                    <div class="slider-wrapper">
+                        <button class="nav-btn prev-btn">&lt;</button>
+                        <button class="nav-btn next-btn">&gt;</button>
+                        
+                        <div class="image-container">
+                            <img src="data/kidroom1.jpg" alt="Image 1">
+                            <img src="data/kidroom2.jpg" alt="Image 2">
+                            <img src="data/kidroom3.jpg" alt="Image 3">
+                        </div>
+                    </div>
+
+                    <div class="dots-container">
+                        <div class="dot active" data-index="0"></div>
+                        <div class="dot" data-index="1"></div>
+                        <div class="dot" data-index="2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardochka">
+                <h2>Ванные</h2>
+                <br>
+                <div class="card">
+                    <div class="slider-wrapper">
+                        <button class="nav-btn prev-btn">&lt;</button>
+                        <button class="nav-btn next-btn">&gt;</button>
+                        
+                        <div class="image-container">
+                            <img src="data/basroom1.jpg" alt="Image 1">
+                            <img src="data/basroom2.jpg" alt="Image 2">
+                            <img src="data/basroom3.jpg" alt="Image 3">
+                        </div>
+                    </div>
+
+                    <div class="dots-container">
+                        <div class="dot active" data-index="0"></div>
+                        <div class="dot" data-index="1"></div>
+                        <div class="dot" data-index="2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardochka">
+                <h2>Прихожие</h2>
+                <br>
+                <div class="card">
+                    <div class="slider-wrapper">
+                        <button class="nav-btn prev-btn">&lt;</button>
+                        <button class="nav-btn next-btn">&gt;</button>
+                        
+                        <div class="image-container">
+                            <img src="data/prih1.jpg" alt="Image 1">
+                            <img src="data/prih2.jpg" alt="Image 2">
+                            <img src="data/prih3.jpg" alt="Image 3">
+                        </div>
+                    </div>
+
+                    <div class="dots-container">
+                        <div class="dot active" data-index="0"></div>
+                        <div class="dot" data-index="1"></div>
+                        <div class="dot" data-index="2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+
+        <div class="lenta">
+            <div class="cardochka">
+                <h2>Спальня</h2>
+                <br>
+                <div class="card">
+                    <div class="slider-wrapper">
+                        <button class="nav-btn prev-btn">&lt;</button>
+                        <button class="nav-btn next-btn">&gt;</button>
+                        
+                        <div class="image-container">
+                            <img src="data/bedroom1.jpg" alt="Image 1">
+                            <img src="data/bedroom2.jpg" alt="Image 2">
+                            <img src="data/bedroom3.jpg" alt="Image 3">
+                        </div>
+                    </div>
+
+                    <div class="dots-container">
+                        <div class="dot active" data-index="0"></div>
+                        <div class="dot" data-index="1"></div>
+                        <div class="dot" data-index="2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardochka">
+                <h2>Гостиные</h2>
+                <br>
+                <div class="card">
+                    <div class="slider-wrapper">
+                        <button class="nav-btn prev-btn">&lt;</button>
+                        <button class="nav-btn next-btn">&gt;</button>
+                        
+                        <div class="image-container">
+                            <img src="data/zal1.jpg" alt="Image 1">
+                            <img src="data/zal2.jpg" alt="Image 2">
+                            <img src="data/zal3.jpg" alt="Image 3">
+                        </div>
+                    </div>
+
+                    <div class="dots-container">
+                        <div class="dot active" data-index="0"></div>
+                        <div class="dot" data-index="1"></div>
+                        <div class="dot" data-index="2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardochka">
+                <h2>Кухни</h2>
+                <br>
+                <div class="card">
+                    <div class="slider-wrapper">
+                        <button class="nav-btn prev-btn">&lt;</button>
+                        <button class="nav-btn next-btn">&gt;</button>
+                        
+                        <div class="image-container">
+                            <img src="data/kitchen1.jpg" alt="Image 1">
+                            <img src="data/kitchen2.jpg" alt="Image 2">
+                            <img src="data/kitchen3.jpg" alt="Image 3">
+                        </div>
+                    </div>
+
+                    <div class="dots-container">
+                        <div class="dot active" data-index="0"></div>
+                        <div class="dot" data-index="1"></div>
+                        <div class="dot" data-index="2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="aboutMEE" id="about">
+        <div class="labble">
+            <h2>Уют вашего</h2>
+            <h2 style="color: #ff8800;">Дома</h2>
+            <img src="data/homeIcon.webp" alt="">
+        </div>
+        <br>
+        <div class="marginContent">
+            <p>Изготавиливаем корпусную мебель на заказ по индивидуальным размерам и вашим пожеланиям.
+                 Создаем функцианальные и стильные решения для любого помещения, уделяя особое вниманиекачеству и каждой детали</p>
+            <br>
+            <br>
+            <h2>Наши преимущества</h2>
+            <br>
+            <div class="cardAboutContainer">
+                <div class="cardAbout">
+                    <img src="data/icon1.webp" alt="">
+                    <p>Бесплатный замер и проект</p>
+                </div>
+                <div class="cardAbout">
+                    <img src="data/icon2.webp" alt="">
+                    <p>Качество и надежные материалы</p>
+                </div>
+                <div class="cardAbout">
+                    <img src="data/icon3.webp" alt="">
+                    <p>Чистый монтаж и аккуратная работа</p>
+                </div>
+            </div>
+            <br>
+            <br>
+            <h2>Почему выбирают нас</h2>
+            <br>
+
+            <div class="usSasContainer">
+                <div class="usCard">
+                    <h3>Качественные материалы</h3>
+                    <br>
+                    <p>Используем проверенную фурнитуру польских и немецких брендов, ЛДСП от нескольких производителей, МДФ-фасады, современные столешницы и влагостойкие материалы.</p>
+                </div>
+                <div class="usCard">
+                    <h3>Индивидуальный подход</h3>
+                    <br>
+                    <p>Подбираем цвета, материалы и фурнитуру под ваш интерьер. Во время замера показываем образцы и помогаем выбирать оптимальное решение.</p>
+                </div>
+                <div class="usCard">
+                    <h3>Аккуратная работа</h3>
+                    <br>
+                    <p>Соблюдаем сроки, выполняем чистый и качественный монтаж и сопровождаем проект до полного завершения.</p>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <h2>Условия сотрудничества</h2>
+            <br>
+
+            <div class="usloviJAContainer">
+                <div class="strokee">
+                    <div class="sphere"></div>
+                    <p>Бесплатный замер и консультация</p>
+                </div>
+                <div class="strokee">
+                    <div class="sphere"></div>
+                    <p>Предоплата - 50% после заключения договора</p>
+                </div>
+                <div class="strokee">
+                    <div class="sphere"></div>
+                    <p>Оставшаяся сумма оплачивается после завершения всех работ.</p>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div style="text-align: center;">
+                <div class="kachestvo">
+                    <p>За качество своей мебели отвечаем!</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="contact" id="contact">
+
+        <h2>Контакты</h2>
+        <br>
+        <br>
+        <div class="parrentButton">
+            <div class="button">
+                <a href="tel:+79951268512" class="buttonAD">
+                    <p>Позвонить</p>
+                    <img src="data/callMee.webp" alt="">
+                </a>
+            </div>
+            <div class="button">
+                <a href="https://t.me://+79951268512" class="buttonAD">
+                    <p>Telegram</p>
+                    <img src="data/tgIcon.webp" alt="">
+                </a>
+            </div>
+            <div class="button">
+                <a href="https://max.ru/u/f9LHodD0cOIGqZvs6IV1I3KCZ2A5hUiFSFXtnCApIkeJyqYuXsTND-wpes0" class="buttonAD">
+                    <p>Max</p>
+                    <img src="data/maxKaks.webp" alt="">
+                </a>
+            </div>
+        </div>
+        <br>
+        <h2>Наши каналы</h2>
+        <br>
+        <br>
+        <div class="lentaBlock">
+            <div class="cardila">
+                <a href="https://vk.com/club219249372">
+                    <img src="data/vk.webp" alt="">
+                </a>
+            </div>
+            <div class="cardila">
+                <a href="https://max.ru/join/0fxaq63aIsXn9yat_8TvYo_Dys9zf72GSSful582ZWk%D1%85">
+                    <img src="data/maxKaks.webp" alt="">
+                </a>
+            </div>
+            <div class="cardila">
+                <a href="https://t.me/+aBIr9FedJjUyNjgy">
+                    <img src="data/tgChanell.webp" alt="">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        <div class="naviGATE">
+            <a href="index.html">Главная</a>
+            <a href="#work">Работы</a>
+            <a href="#about">О нас</a>
+            <a href="#contact">Контакты</a>
+        </div>
+        <br>
+        <br>
+        <div class="contactContainer">
+            <div class="write">
+                <h2>Контакты</h2>
+                <a href="tel:+79951268512">+7 995 126 85 12</a>
+                <a href="https://t.me://+79951268512">Написать в Telegram</a>
+                <a href="https://max.ru/u/f9LHodD0cOIGqZvs6IV1I3KCZ2A5hUiFSFXtnCApIkeJyqYuXsTND-wpes0">Написать в Max</a>
+            </div>
+            <div class="channel">
+                <h2>Соц сети</h2>
+                <div class="socialLenta">
+                    <div class="sasCardChanel"><a href="https://vk.com/club219249372"><img src="data/vk.webp" alt=""></a></div>
+                    <div class="sasCardChanel"><a href="https://max.ru/join/0fxaq63aIsXn9yat_8TvYo_Dys9zf72GSSful582ZWk%D1%85"><img src="data/maxKaks.webp" alt=""></a></div>
+                    <div class="sasCardChanel"><a href="https://t.me/+aBIr9FedJjUyNjgy"><img src="data/tgChanell.webp" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <p class="author" style="color: white; font-size: 20px;">Сайт защищен авторским правом и занесен в реестр <a href="" style="color: white; font-size: 20px;">Disite-studio</a></p>
+    </div>
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+<div id="modalOverlay" class="modal-overlay" onclick="closeModalByOverlay(event)">
+    
+    <div class="modal-content">
+        <button class="close-modal" onclick="closeModal()">&times;</button>
+        
+        <h3>Как вы хотите связаться?</h3>
+        
+        <div class="modal-buttons">
+            <a href="https://t.me/Repetitor_Yana_RUS" class="modal-link tg-link">
+                <span>Telegram</span>
+                <i class="fa-brands fa-telegram"></i>
+            </a>
+            <a href="https://t.me/Repetitor_Yana_RUS" class="modal-link tg-link">
+                <span>Max</span>
+                <i class="fa-solid fa-comment-dots"></i>
+            </a>
+            
+            <a href="tel:+79216248501" class="modal-link phone-link">
+                <span>Позвонить</span>
+                <i class="fa-solid fa-phone"></i>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>
+
+<script>
+  const track = document.getElementById('auto-track');
+  // Клонируем всё содержимое трека и добавляем в него же
+  track.innerHTML += track.innerHTML;
+</script>
+
+
+<script>
+// ОДИН скрипт для всех кнопок
+document.querySelectorAll('.bubbly-button, .zapiska').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.remove('animate');
+        requestAnimationFrame(() => {
+            this.classList.add('animate');
+        });
+        setTimeout(() => {
+            this.classList.remove('animate');
+        }, 700);
+    });
+});
+</script>
+
+
+<script>
+// Получаем нашу единственную модалку по ID
+const overlay = document.getElementById('modalOverlay');
+
+// Функция открытия (вызывается из любой кнопки)
+function openModal() {
+    overlay.classList.add('active');
+}
+
+// Функция закрытия (вызывается крестиком)
+function closeModal() {
+    overlay.classList.remove('active');
+}
+
+// Функция закрытия при клике на темный фон
+function closeModalByOverlay(event) {
+    // Проверяем, что кликнули именно по фону, а не по самому белому окну внутри
+    if (event.target === overlay) {
+        closeModal();
+    }
+}
+</script>
+
+<script>
+// Авто-закрытие мобильного меню при клике на любую ссылку-якорь
+const burgerToggle = document.getElementById('burger-toggle');
+const mobileLinks = document.querySelectorAll('.selfach .menu-link');
+
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (burgerToggle) burgerToggle.checked = false; // Просто снимаем галочку, и меню улетает
+    });
+});
+</script>
+
+
+<script>
+    function changeBanner() {
+        const img = document.querySelector('.banner');
+        if (window.innerWidth <= 768) {
+            img.src = 'data/bannerTelephone.webp';
+        } else {
+            img.src = 'data/banner.webp';
+        }
+    }
+
+window.addEventListener('load', changeBanner);
+window.addEventListener('resize', changeBanner);
+</script>
+
+
+<script src="data/js/motator.js"></script>
+
+
+<script>
+    function toggleMenu() {
+    const burger = document.querySelector('.burger');
+    const menu = document.getElementById('mobileMenu');
+    
+    burger.classList.toggle('active');
+    menu.classList.toggle('open');
+    
+    // Запрещаем скролл при открытом меню
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+
+// Закрываем меню при клике на затемнение
+document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    if (e.target === menu) {
+        toggleMenu();
+    }
+});
+
+// Закрываем при нажатии ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const menu = document.getElementById('mobileMenu');
+        if (menu.classList.contains('open')) {
+            toggleMenu();
+        }
+    }
+});
+</script>

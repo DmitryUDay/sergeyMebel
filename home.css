@@ -1,0 +1,874 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+body, html{
+    background-color: #007e97;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.navibar{
+    background-color: #075b6c;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 998;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+
+.navibar img{
+    width: 5%;
+}
+
+.navigationButton a{
+    display: block;
+    color: white;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.navigationButton{
+    display: flex;
+    gap: 50px;
+}
+.navibar button:hover{
+    cursor: pointer;
+    background-color: #da7400;
+}
+
+.navibar button{
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 15px;
+    color: white;
+    background-color: #ff8800;
+    transition: all 0.3s;
+}
+
+.banner{
+    width: 100%;
+    display: block;
+}
+
+.bannerContainer{
+    position: relative;
+}
+
+.getContact{
+    font-size: 30px;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 15px;
+    color: white;
+    background-color: #ff8800;
+    position: absolute;
+    bottom: 25%;
+    left: 3%;
+    transition: all 0.3s;
+}
+
+.getContact:hover{
+    cursor: pointer;
+    background-color: #da7400;
+}
+
+
+.containerProject{
+    position: relative;
+}
+
+
+.plashKakaOnBaner{
+    position: absolute;
+    background-color: #3B9CAFC4;
+    margin: 0 50px; /* Теперь это сработает! */
+    left: 0;
+    right: 0; /* Растягиваем от левого до правого края */
+    bottom: 0;
+    display: block;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+
+}
+
+.blackPlashka{
+    background-color: #075b6c;
+    display: flex;
+    display: inline-flex;
+    color: white;
+    gap: 15px;
+    font-size: 25px;
+    padding: 20px 40px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.orangeText{
+    color: #ff8800;
+}
+
+
+.myProjects{
+    background-color: #3B9CAFC4;
+    padding: 20px 30px;
+    margin: 0 50px; /* Теперь это сработает! */
+    display: block;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+
+/* Главный контейнер карточки */
+.card {
+    width: 300px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Обертка для слайдера и стрелок */
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px;
+}
+
+/* Сама лента с картинками. Вся магия свайпов тут! */
+.image-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Включаем прилипание */
+    scroll-behavior: smooth;       /* Плавная прокрутка */
+    scrollbar-width: none;         /* Прячем скроллбар в Firefox */
+}
+
+/* Прячем скроллбар в Chrome/Safari/Webkit */
+.image-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Каждая картинка внутри слайдера */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 20px;
+    scroll-snap-align: start; /* Картинка прилипает к краю */
+}
+
+/* Кнопки-стрелочки */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    user-select: none;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+/* Контейнер для точек (пагинации) */
+.dots-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 0;
+}
+
+/* Сами точки */
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+/* Активная точка */
+.dot.active {
+    /* background: #333; */
+    border: #ff8800 2px solid;
+    transform: scale(1.2);
+}
+
+
+
+.cardochka{
+    background-color: #257c8d;
+    display: inline-block;
+    padding: 15px 15px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+}
+
+.lenta {
+    display: flex;
+    flex-wrap: wrap;
+    
+    justify-content: space-between; 
+    
+    max-width: 1200px; 
+    width: 100%;
+    gap: 20px; /* Зазор на случай, если карты перенесутся на вторую строку */
+}
+
+
+.aboutMEE{
+    background-color: #005566;
+    margin: 20px 50px;
+    border-radius: 20px;
+}
+
+.labble{
+    background-color: #00353f;
+    display: inline-flex;
+    gap: 10px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 20px;
+    color: white;
+    align-items: center;
+}
+
+.labble img{
+    width: 30px;
+}
+
+.marginContent{
+    padding: 0 20px;
+    padding-top: 20px;
+    color: white;
+}
+
+.marginContent h2{
+    color: #ff8800;
+    text-align: center;
+}
+
+.cardAbout{
+    text-align: center;
+    width: 20%;
+    display: inline-flex;
+    background-color: #478591;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.cardAbout p{
+    text-align: center;
+}
+
+
+.cardAbout img{
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+}
+
+.cardAboutContainer {  /* дайте имя родителю */
+    display: flex;
+    gap: 20px;
+    align-items: stretch; 
+    justify-content: center;
+}
+
+
+.usSasContainer{
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.usCard{
+    background-color: #307583;
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.usloviJAContainer{
+    display: block;
+    margin: 0 auto;
+}
+
+.strokee{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    width: 40%;   
+}
+
+.sphere{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50px;
+    flex-shrink: 0;
+}
+
+
+.kachestvo{
+    display: inline-flex;
+    background-color: #ff8800;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-size: 25px;
+    
+}
+
+
+.parrentButton{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact{
+    margin: 50px;
+    background-color: #ff8800;
+    border-radius: 20px;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.button{
+    flex: 1 1 0;              /* ← все кнопки равной ширины */
+    background-color: #3599ad;
+    display: flex;     
+    padding: 5px;
+    border-radius: 20px;       
+}
+
+.buttonAD{
+    display: inline-flex;
+    align-items: center;
+    font-size: 25px;
+    gap: 20px;
+    text-decoration: none;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.buttonAD img{
+    width: 60px;
+}
+
+.buttonAD p{
+    color: white;
+}
+
+.lentaBlock{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cardila{
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #3599ad;
+    
+}
+
+.cardila img{
+    width: 100px;
+}
+
+
+
+.footer{
+    font-size: 25px;
+    padding: 20px 20%;
+    background-color: #075b6c;
+}
+
+.naviGATE{
+    text-align: center;
+}
+
+.naviGATE a{
+    margin-right: 20px;
+    display: inline-flex;
+    color: white;
+    font-size: 25px;
+
+}
+
+
+.contactContainer{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.write, .channel{
+    text-align: center;
+    color: white;
+}
+.write a{
+    color: white;
+    display: block;
+}
+
+.socialLenta{
+    display: flex;
+    gap: 10px;
+}
+
+.sasCardChanel{
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #3599ad;
+}
+
+.sasCardChanel img{
+    width: 50px;
+}
+
+
+
+
+
+
+/* Кнопка вызова (просто для красоты) */
+.trigger-button {
+    padding: 15px 30px;
+    background-color: #ff8800;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Задний фон модалки (оверлей) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px); /* Модный блюр фона */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    
+    /* Изначально прячем оверлей плавно */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Окно-резинка */
+.modal-content {
+    background-color: #075B6C;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    text-align: center;
+    position: relative;
+    
+    /* Изначально сжимаем в ноль прямо в центр */
+    transform: scale(0);
+    
+    /* Настройка резиновой анимации: вылет из центра */
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* --- СОСТОЯНИЕ АКТИВАЦИИ (когда кликнули) --- */
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1); /* Вылетает и пружинит */
+}
+
+/* Внутрянка окна */
+.modal-content h3 {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 22px;
+}
+
+/* Ссылки-кнопки в столбик */
+.modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Отступ между кнопками */
+}
+
+.modal-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    transition: transform 0.2s ease;
+}
+
+.modal-link:hover {
+    transform: translateY(-2px); /* Легкий ховер при наведении */
+}
+
+/* Цвета для кнопок */
+.tg-link {
+    background-color: #ff8800;
+    color: #075B6C;
+    color: white;
+}
+
+.phone-link {
+    background-color: #ffffff;
+    color: #ff8800;
+}
+
+.modal-link img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* Крестик закрытия */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+
+
+
+
+/* ===== БУРГЕР-КНОПКА (скрыта на десктопе) ===== */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 101;
+}
+
+.burger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* Анимация бургера в крестик (при открытом меню) */
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;                    /* ← исчезает, а не сжимается */
+    transform: scaleX(0);          /* ← дополнительно сжимаем в ноль */
+}
+
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ===== МОБИЛЬНОЕ МЕНЮ (выезжает справа) ===== */
+.mobileMenu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: #307583;
+    padding: 80px 30px 30px;
+    transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mobileMenu.open {
+    right: 0;
+}
+
+/* Затемнение фона */
+.mobileMenu::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
+    opacity: 0;
+    transition: 0.4s;
+    pointer-events: none;
+}
+
+.mobileMenu.open::before {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Кнопка закрытия */
+.closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closeBtn:hover {
+    transform: rotate(90deg);
+    color: #ff8800;
+}
+
+/* Ссылки в мобильном меню */
+.mobileMenu a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.mobileMenu a:hover {
+    color: #ff8800;
+    padding-left: 10px;
+}
+
+.zapiskaMobile {
+    margin-top: 20px;
+    background: #ff8800;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.zapiskaMobile:hover {
+    transform: scale(1.02);
+    background: #e07a00;
+}
+.author{
+    text-align: center;
+}
+
+
+.brbrPatapim{
+    padding-bottom: 10px;
+}
+
+
+
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 768px) {
+    .navigationButton {
+        display: none;
+    }
+
+    .logo{
+        display: none;
+    }
+    .burger {
+        display: flex;
+    }
+
+    .getContact{
+        font-size: 20px;
+        bottom: 30%;
+    }
+    .plashKakaOnBaner{
+        margin: 0 10px;
+    }
+        
+    .blackPlashka{
+        gap: 15px;
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+
+
+    .myProjects{
+        padding: 20px 30px;
+        margin: 0 10px;
+    }
+
+    /* ===== ИСПРАВЛЕНИЯ ДЛЯ КАРТОЧЕК ===== */
+    .lenta {
+        display: flex;
+        flex-direction: column;      /* карточки в столбик */
+        align-items: center;         /* центрируем */
+        padding: 0;                 /* убираем лишние паддинги */
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .aboutMEE{
+        margin: 20px 10px;
+    }
+
+    
+    .cardAbout{
+        width: 30%;
+    }
+
+    .cardAbout p{
+        font-size: 15px;
+    }
+
+
+    .cardAbout img{
+        margin: 0 auto;
+        width: 70px;
+    }
+
+    .cardAboutContainer {
+        gap: 10px;
+    }
+    .usSasContainer{
+        flex-wrap: wrap;
+    }
+    .strokee{
+        width: 100%;
+        font-size: 20px;
+    }
+
+
+
+
+
+
+    .parrentButton{
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .contact{
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .button{
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .buttonAD{
+        font-size: 20px;
+        gap: 20px;
+        
+    }
+
+    .buttonAD img{
+        width: 30px;
+    }
+
+    .lentaBlock{
+        gap: 20px;
+    }
+
+    .cardila{
+        padding: 10px;
+        
+    }
+
+    .cardila img{
+        width: 60px;
+    }
+
+    .contactContainer{
+        flex-wrap: wrap;
+    }
+
+    .channel{
+        padding-top: 50px;
+    }
+
+    
+}
+

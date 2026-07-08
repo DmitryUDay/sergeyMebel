@@ -94,9 +94,9 @@ body, html{
 .plashKakaOnBaner{
     position: absolute;
     background-color: #3B9CAFC4;
-    margin: 0 50px; /* Теперь это сработает! */
+    margin: 0 50px;
     left: 0;
-    right: 0; /* Растягиваем от левого до правого края */
+    right: 0;
     bottom: 0;
     display: block;
     text-align: center;
@@ -126,7 +126,7 @@ body, html{
 .myProjects{
     background-color: #3B9CAFC4;
     padding: 20px 30px;
-    margin: 0 50px; /* Теперь это сработает! */
+    margin: 0 50px;
     display: block;
     text-align: center;
     border-bottom-left-radius: 20px;
@@ -135,7 +135,6 @@ body, html{
 
 
 
-/* Главный контейнер карточки */
 .card {
     width: 300px;
     border-radius: 16px;
@@ -145,40 +144,35 @@ body, html{
     flex-direction: column;
 }
 
-/* Обертка для слайдера и стрелок */
 .slider-wrapper {
     position: relative;
     width: 100%;
     height: 250px;
 }
 
-/* Сама лента с картинками. Вся магия свайпов тут! */
 .image-container {
     display: flex;
     width: 100%;
     height: 100%;
     overflow-x: auto;
-    scroll-snap-type: x mandatory; /* Включаем прилипание */
-    scroll-behavior: smooth;       /* Плавная прокрутка */
-    scrollbar-width: none;         /* Прячем скроллбар в Firefox */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
-/* Прячем скроллбар в Chrome/Safari/Webkit */
 .image-container::-webkit-scrollbar {
     display: none;
 }
 
-/* Каждая картинка внутри слайдера */
 .image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     flex-shrink: 0;
     border-radius: 20px;
-    scroll-snap-align: start; /* Картинка прилипает к краю */
+    scroll-snap-align: start;
 }
 
-/* Кнопки-стрелочки */
 .nav-btn {
     position: absolute;
     top: 50%;
@@ -205,7 +199,6 @@ body, html{
 .prev-btn { left: 10px; }
 .next-btn { right: 10px; }
 
-/* Контейнер для точек (пагинации) */
 .dots-container {
     align-items: center;
     display: flex;
@@ -214,7 +207,6 @@ body, html{
     padding: 15px 0;
 }
 
-/* Сами точки */
 .dot {
     width: 10px;
     height: 10px;
@@ -224,9 +216,7 @@ body, html{
     cursor: pointer;
 }
 
-/* Активная точка */
 .dot.active {
-    /* background: #333; */
     border: #ff8800 2px solid;
     transform: scale(1.2);
 }
@@ -250,7 +240,7 @@ body, html{
     
     max-width: 1200px; 
     width: 100%;
-    gap: 20px; /* Зазор на случай, если карты перенесутся на вторую строку */
+    gap: 20px;
 }
 
 
@@ -306,7 +296,7 @@ body, html{
     width: 100px;
 }
 
-.cardAboutContainer {  /* дайте имя родителю */
+.cardAboutContainer {
     display: flex;
     gap: 20px;
     align-items: stretch; 
@@ -380,7 +370,7 @@ body, html{
 }
 
 .button{
-    flex: 1 1 0;              /* ← все кнопки равной ширины */
+    flex: 1 1 0;
     background-color: #3599ad;
     display: flex;     
     padding: 5px;
@@ -475,11 +465,6 @@ body, html{
 }
 
 
-
-
-
-
-/* Кнопка вызова (просто для красоты) */
 .trigger-button {
     padding: 15px 30px;
     background-color: #ff8800;
@@ -491,7 +476,6 @@ body, html{
     cursor: pointer;
 }
 
-/* Задний фон модалки (оверлей) */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -499,19 +483,17 @@ body, html{
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px); /* Модный блюр фона */
+    backdrop-filter: blur(5px);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 999;
     
-    /* Изначально прячем оверлей плавно */
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
 
-/* Окно-резинка */
 .modal-content {
     background-color: #075B6C;
     padding: 30px;
@@ -521,24 +503,20 @@ body, html{
     text-align: center;
     position: relative;
     
-    /* Изначально сжимаем в ноль прямо в центр */
     transform: scale(0);
     
-    /* Настройка резиновой анимации: вылет из центра */
     transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
-/* --- СОСТОЯНИЕ АКТИВАЦИИ (когда кликнули) --- */
 .modal-overlay.active {
     opacity: 1;
     pointer-events: auto;
 }
 
 .modal-overlay.active .modal-content {
-    transform: scale(1); /* Вылетает и пружинит */
+    transform: scale(1);
 }
 
-/* Внутрянка окна */
 .modal-content h3 {
     margin-top: 10px;
     margin-bottom: 25px;
@@ -547,11 +525,10 @@ body, html{
     font-size: 22px;
 }
 
-/* Ссылки-кнопки в столбик */
 .modal-buttons {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Отступ между кнопками */
+    gap: 15px;
 }
 
 .modal-link {
@@ -568,10 +545,9 @@ body, html{
 }
 
 .modal-link:hover {
-    transform: translateY(-2px); /* Легкий ховер при наведении */
+    transform: translateY(-2px);
 }
 
-/* Цвета для кнопок */
 .tg-link {
     background-color: #ff8800;
     color: #075B6C;
@@ -589,7 +565,6 @@ body, html{
     object-fit: contain;
 }
 
-/* Крестик закрытия */
 .close-modal {
     position: absolute;
     top: 15px;
@@ -610,7 +585,6 @@ body, html{
 
 
 
-/* ===== БУРГЕР-КНОПКА (скрыта на десктопе) ===== */
 .burger {
     display: none;
     flex-direction: column;
@@ -629,14 +603,13 @@ body, html{
     transition: 0.3s;
 }
 
-/* Анимация бургера в крестик (при открытом меню) */
 .burger.active span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
 }
 
 .burger.active span:nth-child(2) {
-    opacity: 0;                    /* ← исчезает, а не сжимается */
-    transform: scaleX(0);          /* ← дополнительно сжимаем в ноль */
+    opacity: 0;
+    transform: scaleX(0);
 }
 
 .burger.active span:nth-child(3) {
@@ -648,7 +621,7 @@ body, html{
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
+    width: 250px;
     height: 100vh;
     background-color: #307583;
     padding: 80px 30px 30px;
@@ -663,7 +636,6 @@ body, html{
     right: 0;
 }
 
-/* Затемнение фона */
 .mobileMenu::before {
     content: '';
     position: fixed;
@@ -683,7 +655,6 @@ body, html{
     pointer-events: auto;
 }
 
-/* Кнопка закрытия */
 .closeBtn {
     position: absolute;
     top: 20px;
@@ -699,7 +670,6 @@ body, html{
     color: #ff8800;
 }
 
-/* Ссылки в мобильном меню */
 .mobileMenu a {
     color: white;
     text-decoration: none;
@@ -721,7 +691,7 @@ body, html{
     border: none;
     padding: 15px;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 15px;
     cursor: pointer;
     transition: 0.3s;
     width: 100%;
@@ -779,9 +749,9 @@ body, html{
     /* ===== ИСПРАВЛЕНИЯ ДЛЯ КАРТОЧЕК ===== */
     .lenta {
         display: flex;
-        flex-direction: column;      /* карточки в столбик */
-        align-items: center;         /* центрируем */
-        padding: 0;                 /* убираем лишние паддинги */
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
     }
 
     .card {
@@ -867,6 +837,10 @@ body, html{
 
     .channel{
         padding-top: 50px;
+    }
+
+    .navibar button{
+        font-size: 20px;
     }
 
     

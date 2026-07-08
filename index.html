@@ -19,7 +19,6 @@
             <a href="#contact">Контакты</a>
         </div>
         
-        <!-- Бургер-кнопка -->
         <div class="burger" onclick="toggleMenu()">
             <span></span>
             <span></span>
@@ -29,9 +28,7 @@
         
     </div>
 
-    <!-- Мобильное меню (выезжает справа) -->
     <div class="mobileMenu" id="mobileMenu">
-        <div class="closeBtn" onclick="toggleMenu()">✕</div>
         <a href="index.html" onclick="toggleMenu()">Главная</a>
         <a href="#work" onclick="toggleMenu()">Работы</a>
         <a href="#about" onclick="toggleMenu()">О нас</a>
@@ -64,9 +61,9 @@
                         <button class="nav-btn next-btn">&gt;</button>
                         
                         <div class="image-container">
-                            <img src="data/kidroom1.jpg" alt="Image 1">
-                            <img src="data/kidroom2.jpg" alt="Image 2">
-                            <img src="data/kidroom3.jpg" alt="Image 3">
+                            <img src="data/kidroom1.webp" alt="Image 1">
+                            <img src="data/kidroom2.webp" alt="Image 2">
+                            <img src="data/kidroom3.webp" alt="Image 3">
                         </div>
                     </div>
 
@@ -86,9 +83,9 @@
                         <button class="nav-btn next-btn">&gt;</button>
                         
                         <div class="image-container">
-                            <img src="data/basroom1.jpg" alt="Image 1">
-                            <img src="data/basroom2.jpg" alt="Image 2">
-                            <img src="data/basroom3.jpg" alt="Image 3">
+                            <img src="data/basroom1.webp" alt="Image 1">
+                            <img src="data/basroom2.webp" alt="Image 2">
+                            <img src="data/basroom3.webp" alt="Image 3">
                         </div>
                     </div>
 
@@ -108,9 +105,9 @@
                         <button class="nav-btn next-btn">&gt;</button>
                         
                         <div class="image-container">
-                            <img src="data/prih1.jpg" alt="Image 1">
-                            <img src="data/prih2.jpg" alt="Image 2">
-                            <img src="data/prih3.jpg" alt="Image 3">
+                            <img src="data/prih1.webp" alt="Image 1">
+                            <img src="data/prih2.webp" alt="Image 2">
+                            <img src="data/prih3.webp" alt="Image 3">
                         </div>
                     </div>
 
@@ -135,9 +132,9 @@
                         <button class="nav-btn next-btn">&gt;</button>
                         
                         <div class="image-container">
-                            <img src="data/bedroom1.jpg" alt="Image 1">
-                            <img src="data/bedroom2.jpg" alt="Image 2">
-                            <img src="data/bedroom3.jpg" alt="Image 3">
+                            <img src="data/bedroom1.webp" alt="Image 1">
+                            <img src="data/bedroom2.webp" alt="Image 2">
+                            <img src="data/bedroom3.webp" alt="Image 3">
                         </div>
                     </div>
 
@@ -157,9 +154,9 @@
                         <button class="nav-btn next-btn">&gt;</button>
                         
                         <div class="image-container">
-                            <img src="data/zal1.jpg" alt="Image 1">
-                            <img src="data/zal2.jpg" alt="Image 2">
-                            <img src="data/zal3.jpg" alt="Image 3">
+                            <img src="data/zal1.webp" alt="Image 1">
+                            <img src="data/zal2.webp" alt="Image 2">
+                            <img src="data/zal3.webp" alt="Image 3">
                         </div>
                     </div>
 
@@ -179,9 +176,9 @@
                         <button class="nav-btn next-btn">&gt;</button>
                         
                         <div class="image-container">
-                            <img src="data/kitchen1.jpg" alt="Image 1">
-                            <img src="data/kitchen2.jpg" alt="Image 2">
-                            <img src="data/kitchen3.jpg" alt="Image 3">
+                            <img src="data/kitchen1.webp" alt="Image 1">
+                            <img src="data/kitchen2.webp" alt="Image 2">
+                            <img src="data/kitchen3.webp" alt="Image 3">
                         </div>
                     </div>
 
@@ -404,16 +401,9 @@
 </body>
 </html>
 
-<script>
-  const track = document.getElementById('auto-track');
-  // Клонируем всё содержимое трека и добавляем в него же
-  track.innerHTML += track.innerHTML;
-</script>
-
 
 <script>
-// ОДИН скрипт для всех кнопок
-document.querySelectorAll('.bubbly-button, .zapiska').forEach(btn => {
+document.querySelectorAll('.getContact, .zapiska').forEach(btn => {
     btn.addEventListener('click', function(e) {
         e.preventDefault();
         this.classList.remove('animate');
@@ -429,22 +419,17 @@ document.querySelectorAll('.bubbly-button, .zapiska').forEach(btn => {
 
 
 <script>
-// Получаем нашу единственную модалку по ID
 const overlay = document.getElementById('modalOverlay');
 
-// Функция открытия (вызывается из любой кнопки)
 function openModal() {
     overlay.classList.add('active');
 }
 
-// Функция закрытия (вызывается крестиком)
 function closeModal() {
     overlay.classList.remove('active');
 }
 
-// Функция закрытия при клике на темный фон
 function closeModalByOverlay(event) {
-    // Проверяем, что кликнули именно по фону, а не по самому белому окну внутри
     if (event.target === overlay) {
         closeModal();
     }
@@ -452,13 +437,12 @@ function closeModalByOverlay(event) {
 </script>
 
 <script>
-// Авто-закрытие мобильного меню при клике на любую ссылку-якорь
 const burgerToggle = document.getElementById('burger-toggle');
 const mobileLinks = document.querySelectorAll('.selfach .menu-link');
 
 mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
-        if (burgerToggle) burgerToggle.checked = false; // Просто снимаем галочку, и меню улетает
+        if (burgerToggle) burgerToggle.checked = false;
     });
 });
 </script>
@@ -490,11 +474,9 @@ window.addEventListener('resize', changeBanner);
     burger.classList.toggle('active');
     menu.classList.toggle('open');
     
-    // Запрещаем скролл при открытом меню
     document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
 }
 
-// Закрываем меню при клике на затемнение
 document.addEventListener('click', function(e) {
     const menu = document.getElementById('mobileMenu');
     if (e.target === menu) {
@@ -502,7 +484,6 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// Закрываем при нажатии ESC
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         const menu = document.getElementById('mobileMenu');

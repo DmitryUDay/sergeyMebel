@@ -693,6 +693,16 @@ body, html{
     padding-bottom: 10px;
 }
 
+.pollySY{
+    width: 100%;
+    text-align: center;
+}
+
+.pollySY a{
+    font-size: 20px;
+    color: white;
+}
+
 
 
 

@@ -85,11 +85,9 @@ body, html{
     background-color: #da7400;
 }
 
-
 .containerProject{
     position: relative;
 }
-
 
 .plashKakaOnBaner{
     position: absolute;
@@ -122,7 +120,6 @@ body, html{
     color: #ff8800;
 }
 
-
 .myProjects{
     background-color: #3B9CAFC4;
     padding: 20px 30px;
@@ -132,8 +129,6 @@ body, html{
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
-
-
 
 .card {
     width: 300px;
@@ -220,8 +215,6 @@ body, html{
     border: #ff8800 2px solid;
     transform: scale(1.2);
 }
-
-
 
 .cardochka{
     background-color: #257c8d;
@@ -340,7 +333,6 @@ body, html{
     flex-shrink: 0;
 }
 
-
 .kachestvo{
     display: inline-flex;
     background-color: #ff8800;
@@ -351,7 +343,6 @@ body, html{
     font-size: 25px;
     
 }
-
 
 .parrentButton{
     display: flex;
@@ -385,7 +376,6 @@ body, html{
     text-decoration: none;
     justify-content: center;
     width: 100%;
-    
 }
 
 .buttonAD img{
@@ -413,8 +403,6 @@ body, html{
     width: 100px;
 }
 
-
-
 .footer{
     font-size: 25px;
     padding: 20px 20%;
@@ -432,7 +420,6 @@ body, html{
     font-size: 25px;
 
 }
-
 
 .contactContainer{
     justify-content: space-between;
@@ -581,10 +568,6 @@ body, html{
     color: #333;
 }
 
-
-
-
-
 .burger {
     display: none;
     flex-direction: column;
@@ -701,10 +684,10 @@ body, html{
     transform: scale(1.02);
     background: #e07a00;
 }
+
 .author{
     text-align: center;
 }
-
 
 .brbrPatapim{
     padding-bottom: 10px;
@@ -740,7 +723,6 @@ body, html{
         padding: 10px 20px;
     }
 
-
     .myProjects{
         padding: 20px 30px;
         margin: 0 10px;
@@ -762,7 +744,6 @@ body, html{
         margin: 20px 10px;
     }
 
-    
     .cardAbout{
         width: 30%;
     }
@@ -770,7 +751,6 @@ body, html{
     .cardAbout p{
         font-size: 15px;
     }
-
 
     .cardAbout img{
         margin: 0 auto;
@@ -787,11 +767,6 @@ body, html{
         width: 100%;
         font-size: 20px;
     }
-
-
-
-
-
 
     .parrentButton{
         gap: 20px;
@@ -843,6 +818,4 @@ body, html{
         font-size: 20px;
     }
 
-    
 }
-
